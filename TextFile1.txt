@@ -1,0 +1,22 @@
+﻿CREATE DATABASE "TxtParser"
+    WITH
+    OWNER = "Chris"
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+	
+	
+	
+CREATE TABLE public."Word"
+(
+    "Id" bigint NOT NULL,
+    "Name" character varying(21),
+    "Count" bigint NOT NULL,
+    PRIMARY KEY ("Id")
+);
+
+ALTER TABLE IF EXISTS public."Word"
+    OWNER to "Chris";
+	
+ALTER TABLE IF EXISTS public."Word"
+    ALTER COLUMN "Id" ADD GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 );
